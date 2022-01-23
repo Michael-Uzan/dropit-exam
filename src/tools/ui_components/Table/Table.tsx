@@ -6,6 +6,7 @@ import {
   TableHead,
 } from "@mui/material";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import TableCell from "./components/TableCell";
 import TableRow from "./components/TableRow";
@@ -19,6 +20,8 @@ interface Props<Item> {
 }
 
 function Table<Item>({ data, columns, getKeyRow }: Props<Item>) {
+
+
 
   if (!data.length) return (
     <section className="no-results">
@@ -41,7 +44,7 @@ function Table<Item>({ data, columns, getKeyRow }: Props<Item>) {
 
         <TableBody>
           {data.map((item) => (
-            <TableRow key={getKeyRow(item)}>
+            <TableRow key={getKeyRow(item)} productId={getKeyRow(item)} >
               {columns.map(({ key, width, renderCell }) => (
                 <TableCell key={key.toString()} width={width}>
                   {renderCell(item)}

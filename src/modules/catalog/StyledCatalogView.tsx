@@ -25,6 +25,15 @@ const StyledCatalogView = styled.div`
     .CatalogView__grid_addToCart {
       cursor: pointer;
     }
+
+    .table-row{
+      cursor: pointer;
+      &:hover{
+        background-color: rgba(199, 196, 196, 0.431);
+        opacity: 0.5
+      }
+    }
+
   }
 `;
 
