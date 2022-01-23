@@ -5,7 +5,7 @@ const StyledCatalogView = styled.div`
     display: flex;
     align-items: center;
 
-    margin-inline: 8px;
+    margin-inline: 24px;
     margin-block: 16px;
 
     .CatalogView__header_text {

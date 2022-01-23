@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { gameReducer } from './reducers/gameReducer';
+import { productReducer } from './reducers/productReducer';
 
 declare global {
   interface Window {
@@ -13,7 +13,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 // Combining reducers into one
 const rootReducer = combineReducers({
-  gameModule: gameReducer,
+  productModule: productReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>

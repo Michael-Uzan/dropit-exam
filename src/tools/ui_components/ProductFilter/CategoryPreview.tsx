@@ -1,9 +1,20 @@
+import { utilService } from "../../../services/util.service";
+
 interface PropType {
-    category: string
+    category: string,
+    onCategorySelect: Function,
+    activeCategory: string
 }
 
-export const CategoryPreview = ({ category }: PropType) => {
+export const CategoryPreview = ({ category, onCategorySelect, activeCategory }: PropType) => {
+
+    const getActiveClass = () => {
+        return activeCategory === category ? 'active' : ''
+    }
+
     return <section className="category-preview">
-        {category}
+        <div onClick={() => onCategorySelect(category)} className={getActiveClass()} >
+            {utilService.getCapitalDisplay(category)}
+        </div>
     </section>
 };
