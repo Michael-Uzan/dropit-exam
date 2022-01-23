@@ -5,17 +5,14 @@ import HomePage from "./pages/HomePage";
 import CatalogPage from "./pages/CatalogPage";
 
 import pathsApp from "./pathsApp";
+import ProductPage from "./pages/ProductPage";
 
 const AppRouter = () => (
   <Router>
     <Switch>
-      <Route exact path={pathsApp.home}>
-        <HomePage />
-      </Route>
-
-      <Route path={pathsApp.catalog}>
-        <CatalogPage />
-      </Route>
+      <Route path={pathsApp.product} component={ProductPage} />
+      <Route path={pathsApp.catalog} component={CatalogPage} />
+      <Route exact path={pathsApp.home} component={HomePage} />
     </Switch>
   </Router>
 );
