@@ -5,8 +5,6 @@ import {
   TableContainer,
   TableHead,
 } from "@mui/material";
-import React from "react";
-import { useHistory } from "react-router-dom";
 
 import TableCell from "./components/TableCell";
 import TableRow from "./components/TableRow";
@@ -20,8 +18,6 @@ interface Props<Item> {
 }
 
 function Table<Item>({ data, columns, getKeyRow }: Props<Item>) {
-
-
 
   if (!data.length) return (
     <section className="no-results">

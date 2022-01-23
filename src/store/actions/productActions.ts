@@ -1,4 +1,3 @@
-import { API } from "../../contexts/api";
 import { IFilterBy } from "../../interfaces/IFilterBy.interface";
 import { productService } from "../../services/product.service";
 

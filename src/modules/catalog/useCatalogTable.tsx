@@ -1,5 +1,5 @@
 import { Tooltip } from "@mui/material";
-import React, { useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 import { GetKeyRow, TableColumn } from "../../tools/ui_components/Table/types";
 import { AddToCartIcon } from "../../tools/icons";
@@ -7,7 +7,7 @@ import { AddToCartIcon } from "../../tools/icons";
 import { CatalogProduct } from "../product/types";
 
 interface Props {
-  onAddItem: (item: CatalogProduct) => void;
+  onAddItem: (ev: MouseEvent, item: CatalogProduct) => void;
 }
 
 function useCatalogTable({ onAddItem }: Props) {
@@ -43,7 +43,7 @@ function useCatalogTable({ onAddItem }: Props) {
         key: "action",
         title: "",
         renderCell: (item) => (
-          <div style={{ cursor: "pointer" }} onClick={() => onAddItem(item)}>
+          <div style={{ cursor: "pointer" }} onClick={(ev: any) => onAddItem(ev, item)}>
             <Tooltip title={"Add to Cart"}>
               <AddToCartIcon />
             </Tooltip>

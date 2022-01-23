@@ -4,7 +4,8 @@ import { CatalogProduct } from "../modules/product/types";
 import { utilService } from "./util.service";
 
 export const productService = {
-    query
+    query,
+    getById
 }
 
 async function query(filterBy: IFilterBy) {
@@ -40,5 +41,22 @@ function _sortBy(productsToShow: CatalogProduct[], sort: string) {
         default:
             return productsToShow
     }
+}
+
+async function getById(productId: string) {
+    console.log('hello')
+    const products: CatalogProduct[] = await _getProducts()
+    console.log('hell2222o')
+    console.log('products', products)
+    // return productsToShow
+    const product = products.find((product: CatalogProduct) => (product.id === +productId))
+    console.log('product ', product)
+    return product
+}
+
+async function _getProducts(): Promise<CatalogProduct[]> {
+    const products: CatalogProduct[] = await API.product.getAll()
+    console.log('test')
+    return products
 }
 

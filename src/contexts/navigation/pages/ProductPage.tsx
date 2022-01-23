@@ -1,7 +1,7 @@
 import { ProductView } from "../../../modules/product/ProductView";
 
-const ProductPage = () => {
-    return <ProductView />;
+const ProductPage = ({ match }: any) => {
+    return <ProductView match={match} />;
 };
 
 export default ProductPage;

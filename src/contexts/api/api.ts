@@ -8,9 +8,10 @@ const API = {
 					'Content-Type': 'application/json',
 					'Accept': 'application/json'
 				}
-			}).then(
-				(response) => response.json()
-			),
+			})
+				.then(
+					(response) => response.json()
+				),
 	},
 	category: {
 		getAll: async (): Promise<string[]> =>
@@ -19,9 +20,10 @@ const API = {
 					'Content-Type': 'application/json',
 					'Accept': 'application/json'
 				}
-			}).then(
-				(response) => response.json()
-			),
+			})
+				.then(
+					(response) => response.json()
+				),
 	},
 };
 
