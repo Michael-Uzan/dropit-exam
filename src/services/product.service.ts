@@ -23,9 +23,7 @@ async function query(filterBy: IFilterBy) {
         })
 
         productsToShow = _sortBy(productsToShow, sort)
-        console.log('sort by: ', sort)
     }
-    console.log('productsToShow', productsToShow)
     return productsToShow
 }
 

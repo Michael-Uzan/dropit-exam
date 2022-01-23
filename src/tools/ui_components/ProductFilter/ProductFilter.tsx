@@ -38,14 +38,21 @@ export const ProductFilter = ({ onChangeFilter }: PropType) => {
     return (
         <StyledProductFilter>
             <section className="product-filter">
-                <input type="search" value={search} name="search" onChange={handleChange} placeholder="Search product" />
-                <label htmlFor="sortBy">Sort by: </label>
-                <select name="sort" id="sort" onChange={handleChange} >
-                    <option value="high-price">Highest price</option>
-                    <option value="low-price">Lowest price</option>
-                    <option value="a-z">A-Z</option>
-                    <option value="z-a">Z-A</option>
-                </select>
+                <div className="filter-container" >
+                    <div className="search">
+                        <label htmlFor="search"><h4>Search: </h4></label>
+                        <input type="search" value={search} name="search" onChange={handleChange} id="search" placeholder="Search product" />
+                    </div>
+                    <div className="sort-by">
+                        <label htmlFor="sortBy"><h4>Sort by: </h4></label>
+                        <select name="sort" id="sort" onChange={handleChange} >
+                            <option value="high-price">Highest price</option>
+                            <option value="low-price">Lowest price</option>
+                            <option value="a-z">A-Z</option>
+                            <option value="z-a">Z-A</option>
+                        </select>
+                    </div>
+                </div>
                 <CategoriesList activeCategory={category} categories={categories} onCategorySelect={onCategorySelect} />
             </section>
         </StyledProductFilter>

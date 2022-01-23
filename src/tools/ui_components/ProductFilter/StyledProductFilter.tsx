@@ -8,6 +8,13 @@ export const StyledProductFilter = styled.div`
   input{
     margin-right: 15px;
   }
+
+  .sort-by , .search , .filter-container{
+    display:flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
 }
  
 .categories-list{
@@ -26,6 +33,7 @@ export const StyledProductFilter = styled.div`
 }
 
 .category-preview{
+  cursor: pointer;
   .active{
     color: red
   }
