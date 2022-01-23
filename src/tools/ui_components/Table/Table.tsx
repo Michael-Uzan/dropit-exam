@@ -19,6 +19,13 @@ interface Props<Item> {
 }
 
 function Table<Item>({ data, columns, getKeyRow }: Props<Item>) {
+
+  if (!data.length) return (
+    <section className="no-results">
+      <h1>Sorry, no results...</h1>
+    </section>
+  )
+
   return (
     <TableContainer component={Paper}>
       <MaterialTable aria-label="simple table">
