@@ -1,4 +1,3 @@
-import React from 'react';
 import { CategoryPreview } from './CategoryPreview';
 
 interface PropType {

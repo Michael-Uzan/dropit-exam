@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LoadingSpinner } from '..';
 import { API } from '../../../contexts/api';
 import { useForm } from '../../hooks/useForm';
@@ -24,7 +24,7 @@ export const ProductFilter = ({ onChangeFilter }: PropType) => {
 
     const [filterBy, handleChange, setFilterBy] = useForm({
         search: '',
-        sortBy: '',
+        sort: '',
         category: ''
     }, onChangeFilter)
 
@@ -40,7 +40,7 @@ export const ProductFilter = ({ onChangeFilter }: PropType) => {
             <section className="product-filter">
                 <input type="search" value={search} name="search" onChange={handleChange} placeholder="Search product" />
                 <label htmlFor="sortBy">Sort by: </label>
-                <select name="sortBy" id="sort" onChange={handleChange} >
+                <select name="sort" id="sort" onChange={handleChange} >
                     <option value="high-price">Highest price</option>
                     <option value="low-price">Lowest price</option>
                     <option value="a-z">A-Z</option>
