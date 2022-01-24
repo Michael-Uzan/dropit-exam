@@ -1,14 +1,17 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { store } from './store';
 import "./index.css";
 
 import AppRouter from "./contexts/navigation/AppRouter";
+import { AppHeader } from "./tools/ui_components/AppHeader/AppHeader";
 
 const App = () => {
   return (
-    <AppRouter />
+    <>
+      <AppHeader />
+      <AppRouter />
+    </>
   );
 };
 
