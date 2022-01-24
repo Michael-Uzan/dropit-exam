@@ -1,27 +1,40 @@
+import { MouseEvent, useEffect, useState } from "react";
 import { useForm } from "../../../hooks/useForm";
 
 export const CartCheckout = () => {
+
+    const [isDisabeld, setIsDisabeld] = useState(true);
 
     const [checkout, handleChange, setCheckout] = useForm({
         username: '',
         address: ''
     })
 
+    useEffect(() => {
+        if (checkout.username && checkout.address) setIsDisabeld(false)
+        else setIsDisabeld(true)
+    }, [checkout])
+
+    const onCheckout = (ev: MouseEvent<Element, MouseEvent>) => {
+        ev?.preventDefault()
+
+    }
+
     const { username, address } = checkout
 
     return <section className="cart-checkout">
-        <form >
+        <form onSubmit={(ev: any) => onCheckout(ev)} >
             <div>
                 <label htmlFor="username">Name: </label>
                 <input type="text" name="username" id="username" value={username}
                     onChange={handleChange} placeholder="Name" />
             </div>
             <div>
-                <label htmlFor="address">Name: </label>
+                <label htmlFor="address">Address: </label>
                 <input type="text" name="address" id="address" value={address}
                     onChange={handleChange} placeholder="Address" />
             </div>
-            <button>Checkout!</button>
+            <button disabled={isDisabeld}>Checkout!</button>
         </form>
     </section>
 };
