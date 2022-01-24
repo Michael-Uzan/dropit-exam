@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { MouseEvent, useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store/actions/cartActions";
 import { loadProducts } from "../../store/actions/productActions";

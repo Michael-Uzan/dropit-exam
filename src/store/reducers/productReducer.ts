@@ -1,9 +1,11 @@
+import { ProductAction, ProductState } from "../../interfaces/IProductReducer"
+
 const INITIAL_STATE: ProductState = {
   products: [],
   filterBy: null
 }
 
-export function productReducer(state: ProductState = INITIAL_STATE, action: any) {
+export function productReducer(state: ProductState = INITIAL_STATE, action: ProductAction) {
   switch (action.type) {
     case 'SET_PRODUCTS':
       return {
@@ -20,6 +22,3 @@ export function productReducer(state: ProductState = INITIAL_STATE, action: any)
   }
 }
 
-interface ProductState {
-
-}

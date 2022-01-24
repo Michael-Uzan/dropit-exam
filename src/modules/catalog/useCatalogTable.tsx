@@ -1,5 +1,5 @@
 import { Tooltip } from "@mui/material";
-import { useCallback, useMemo } from "react";
+import { MouseEvent, useCallback, useMemo } from "react";
 
 import { GetKeyRow, TableColumn } from "../../tools/ui_components/Table/types";
 import { AddToCartIcon } from "../../tools/icons";

@@ -32,7 +32,7 @@ const ProductFilter = ({ onChangeFilter }: PropType) => {
         setFilterBy({ ...filterBy, category: selectedCategory })
     }
 
-    const { search, sort, category } = filterBy
+    const { search, category } = filterBy
 
     if (!categories) return <LoadingSpinner isVisible={true} />
     return (

@@ -6,9 +6,15 @@ import { RootState } from "../../store";
 import { loadProducts, setFilterBy } from "../../store/actions/productActions";
 import { IFilterBy } from "../../interfaces/IFilterBy.interface";
 import ProductFilter from "../../tools/ui_components/ProductFilter";
+import { CatalogProduct } from "../product/types";
+
+interface Products {
+  products: CatalogProduct[],
+
+}
 
 const CatalogView = () => {
-  const { products }: any = useSelector((state: RootState) => state.productModule)
+  const { products }: Products = useSelector((state: RootState) => state.productModule)
   const dispatch = useDispatch()
   const { columns, getKeyRow } = useCatalog();
 

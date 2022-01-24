@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { match, useHistory } from "react-router-dom";
 import routesApp from "../../contexts/navigation/routesApp";
 import { RootState } from "../../store";
 import { addToCart } from "../../store/actions/cartActions";
@@ -10,18 +10,22 @@ import { StyledProductView } from "./StyledProductView"
 import { CatalogProduct } from "./types";
 
 interface PropType {
-    match: any,
+    match: any
+}
+
+interface Products {
+    products: CatalogProduct[]
 }
 
 const ProductView = ({ match }: PropType) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const [product, setProduct] = useState<CatalogProduct | null>(null);
-    const { products }: any = useSelector((state: RootState) => state.productModule)
+    const { products }: Products = useSelector((state: RootState) => state.productModule)
 
     useEffect(() => {
         loadProduct();
-    }, [match.params.productId]);
+    }, [match?.params?.productId as string]);
 
     const loadProduct = async () => {
         const { productId } = match.params;

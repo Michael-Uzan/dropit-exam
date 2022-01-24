@@ -22,7 +22,7 @@ export const CartPreview = ({ item }: PropType) => {
 
     return <section className="cart-preview">
         <h1 onClick={onRemoveItem}>X</h1>
-        <img src={image} />
+        <img src={image} alt="image" />
         <h5>{title}</h5>
         <h5>Price: ${price}</h5>
         <h5>Quantity: {item.count}</h5>
