@@ -37,7 +37,7 @@ function useCatalogTable({ onAddItem }: Props) {
       {
         key: "price",
         title: "Price",
-        renderCell: (item) => <a>{item.price}</a>,
+        renderCell: (item) => <a>${item.price}</a>,
       },
       {
         key: "action",
