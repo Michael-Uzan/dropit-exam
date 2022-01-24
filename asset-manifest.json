@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dropit-exam/static/css/main.697671ac.chunk.css",
-    "main.js": "/dropit-exam/static/js/main.15c0859d.chunk.js",
-    "main.js.map": "/dropit-exam/static/js/main.15c0859d.chunk.js.map",
+    "main.js": "/dropit-exam/static/js/main.7e642a29.chunk.js",
+    "main.js.map": "/dropit-exam/static/js/main.7e642a29.chunk.js.map",
     "runtime-main.js": "/dropit-exam/static/js/runtime-main.b3b01cfc.js",
     "runtime-main.js.map": "/dropit-exam/static/js/runtime-main.b3b01cfc.js.map",
     "static/js/2.bf415687.chunk.js": "/dropit-exam/static/js/2.bf415687.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b3b01cfc.js",
     "static/js/2.bf415687.chunk.js",
     "static/css/main.697671ac.chunk.css",
-    "static/js/main.15c0859d.chunk.js"
+    "static/js/main.7e642a29.chunk.js"
   ]
 }
