@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import { CartTable } from '../../tools/ui_components/CartTable/CartTable';
+import CartTable from '../../tools/ui_components/CartTable';
 import { StyledCartView } from './StyledCartView';
 
 const CartView = () => {

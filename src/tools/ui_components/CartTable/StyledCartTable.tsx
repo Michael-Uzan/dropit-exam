@@ -8,7 +8,7 @@ const StyledCartTable = styled.div`
 }
 
 .cart-preview {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr 2fr 2fr ;
   
@@ -16,6 +16,10 @@ const StyledCartTable = styled.div`
     width: 60px; 
     objectFit: contain;
   }
+}
+
+.cart-total {
+  margin: 0px 24px
 }
 `;
 
