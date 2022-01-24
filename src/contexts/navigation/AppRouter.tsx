@@ -6,9 +6,11 @@ import CatalogPage from "./pages/CatalogPage";
 
 import pathsApp from "./pathsApp";
 import ProductPage from "./pages/ProductPage";
+import { AppHeader } from "../../tools/ui_components/AppHeader/AppHeader";
 
 const AppRouter = () => (
   <Router>
+    <AppHeader />
     <Switch>
       <Route path={pathsApp.product} component={ProductPage} />
       <Route path={pathsApp.catalog} component={CatalogPage} />

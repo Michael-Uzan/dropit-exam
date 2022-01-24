@@ -1,6 +1,5 @@
-import { MouseEventHandler } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { ICartItem } from "../../../interfaces/ICartItem.interface";
 import { RootState } from "../../../store";
 import DropitLogo from "../../../tools/assets/logo-dropit-business.svg";
@@ -10,6 +9,7 @@ import { StyledAppHeader } from "./StyledAppHeader";
 export const AppHeader = () => {
 
     const { items }: any = useSelector((state: RootState) => state.cartModule)
+    const history = useHistory()
 
     const getCountItems = (): number => {
         const countItems = items.reduce((acc: number, item: ICartItem) => {
@@ -19,7 +19,7 @@ export const AppHeader = () => {
     }
 
     const onCartClick = () => {
-        // window.location.assign('/cart')
+        history.push('cart')
     }
 
     return <header>

@@ -8,10 +8,7 @@ import { AppHeader } from "./tools/ui_components/AppHeader/AppHeader";
 
 const App = () => {
   return (
-    <>
-      <AppHeader />
-      <AppRouter />
-    </>
+    <AppRouter />
   );
 };
 
