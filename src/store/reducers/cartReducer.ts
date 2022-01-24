@@ -11,7 +11,7 @@ const INITIAL_STATE: CartState = {
 
 export function cartReducer(state: CartState = INITIAL_STATE, action: any) {
     switch (action.type) {
-        case 'ADD_TO_CART':
+        case 'ADD_TO_CART': {
             const newitems: ICartItem[] = JSON.parse(JSON.stringify(state.items))
             const item = newitems.find((item: ICartItem) => {
                 return item.product.id === action.product.id;
@@ -22,6 +22,17 @@ export function cartReducer(state: CartState = INITIAL_STATE, action: any) {
                 ...state,
                 items: newitems
             }
+        }
+        case 'REMOVE_FROM_CART': {
+            let newitems: ICartItem[] = JSON.parse(JSON.stringify(state.items))
+            newitems = newitems.filter((item: ICartItem) => {
+                return item.product.id !== action.product.id;
+            });
+            return {
+                ...state,
+                items: newitems
+            }
+        }
         case 'CLEAR_CART':
             return {
                 ...state,

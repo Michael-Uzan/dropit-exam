@@ -9,8 +9,18 @@ const StyledCartTable = styled.div`
 .cart-preview {
   margin-bottom: 20px;
   display: grid;
-  grid-template-columns: 1fr 4fr 2fr 2fr 2fr ;
+  grid-template-columns: 1fr 1fr 4fr 2fr 2fr 2fr ;
   
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(202, 202, 202, 0.275);
+      border-radius: 50%;
+    }
+  }
+
   img {
     width: 60px; 
     objectFit: contain;

@@ -23,7 +23,7 @@ export const AppHeader = () => {
     }
 
     const onCartClick = () => {
-        history.push('cart')
+        history.push('/cart')
     }
 
     return <header>

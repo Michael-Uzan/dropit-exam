@@ -6,6 +6,12 @@ export function addToCart(product: CatalogProduct) {
     }
 }
 
+export function removeFromCart(product: CatalogProduct) {
+    return (dispatch: Function) => {
+        dispatch({ type: 'REMOVE_FROM_CART', product })
+    }
+}
+
 export function clearCart() {
     return (dispatch: Function) => {
         dispatch({ type: 'CLEAR_CART' })
