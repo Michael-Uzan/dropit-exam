@@ -13,6 +13,19 @@ export const StyledAppHeader = styled.div`
     display: flex;
     gap: 5px;
   }
+  
+  .logo-back {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    button {
+      background-color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+    }
+  }
 
 
   }
