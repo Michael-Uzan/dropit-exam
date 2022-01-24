@@ -16,7 +16,6 @@ const useCatalog = () => {
   const dispatch = useDispatch()
 
   const handleAddProductToCart = useCallback((ev: any, product: CatalogProduct) => {
-    // TODO
     ev.stopPropagation()
     console.log("handleAddProductToCart");
     console.log("product", product);

@@ -35,7 +35,7 @@ const CatalogView = () => {
         <Table columns={columns} data={products} getKeyRow={getKeyRow} />
       </div>
 
-      <LoadingSpinner isVisible={isLoading} />
+      {/* <LoadingSpinner isVisible={isLoading} /> */}
     </StyledCatalogView>
   );
 };
