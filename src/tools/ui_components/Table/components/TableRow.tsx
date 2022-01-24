@@ -2,6 +2,7 @@ import React, { FC, ReactChild } from "react";
 
 import { TableRow as MaterialTableRow } from "@mui/material";
 import { useHistory } from "react-router-dom";
+import routesApp from "../../../../contexts/navigation/routesApp";
 
 interface PropType {
   children: any,
@@ -14,7 +15,7 @@ const TableRow = ({ children, productId }: PropType) => {
 
   const onRowClick = () => {
     if (!productId) return
-    history.push(`/catalog/${productId}`)
+    history.push(routesApp.getProduct({ productId }))
   }
 
   const getRowClass = () => {

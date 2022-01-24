@@ -11,14 +11,11 @@ import { CatalogProduct } from "../product/types";
 import useCatalogTable from "./useCatalogTable";
 
 const useCatalog = () => {
-  // const [products, setProducts] = useState<CatalogProduct[]>([]);
   const [isLoading, onStartLoading, onEndLoading] = useFlag(true);
   const dispatch = useDispatch()
 
   const handleAddProductToCart = useCallback((ev: any, product: CatalogProduct) => {
     ev.stopPropagation()
-    console.log("handleAddProductToCart");
-    console.log("product", product);
     dispatch(addToCart(product))
   }, []);
 
@@ -28,10 +25,9 @@ const useCatalog = () => {
 
   useEffect(
     () => {
-      // API.product.getAll().then(setProducts).finally(onEndLoading);
       onLoadProducts()
     },
-    [] // eslint-disable-line
+    []
   );
 
   const onLoadProducts = async () => {
@@ -41,7 +37,6 @@ const useCatalog = () => {
 
   return {
     isLoading,
-    // products,
     columns,
     getKeyRow,
   };

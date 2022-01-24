@@ -9,6 +9,18 @@ const StyledHomeView = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  .github-logo {
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100px;
+      text-align: center;
+    }
+  }
 
   .HomeView__header {
     display: flex;
@@ -16,7 +28,7 @@ const StyledHomeView = styled.div`
     justify-content: center;
     align-items: center;
 
-    margin: 64px;
+    margin: 35px;
 
     font-weight: bold;
 

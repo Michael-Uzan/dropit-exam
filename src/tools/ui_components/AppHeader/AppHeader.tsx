@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
+import routesApp from "../../../contexts/navigation/routesApp";
 import { ICartItem } from "../../../interfaces/ICartItem.interface";
 import { RootState } from "../../../store";
 import DropitLogo from "../../../tools/assets/logo-dropit-business.svg";
@@ -23,7 +24,7 @@ export const AppHeader = () => {
     }
 
     const onCartClick = () => {
-        history.push('/cart')
+        history.push(routesApp.getCart())
     }
 
     return <header>
@@ -32,9 +33,9 @@ export const AppHeader = () => {
                 <img src={DropitLogo} alt="logo" />
                 <button onClick={onGoBack} > <BackIcon /></button>
                 <nav>
-                    <NavLink exact activeClassName="active-nav" to={'/'}>Home</NavLink>
-                    <NavLink activeClassName="active-nav" to={'/catalog'}>Catalog</NavLink>
-                    <NavLink activeClassName="active-nav" to={'/cart'}>Cart</NavLink>
+                    <NavLink exact activeClassName="active-nav" to={routesApp.getHome()}>Home</NavLink>
+                    <NavLink activeClassName="active-nav" to={routesApp.getCatalog()}>Catalog</NavLink>
+                    <NavLink activeClassName="active-nav" to={routesApp.getCart()}>Cart</NavLink>
                 </nav>
             </div>
             <div className="cart-display" onClick={onCartClick}>
