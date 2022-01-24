@@ -1,22 +1,19 @@
-import { ratingClasses } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { productService } from "../../services/product.service";
+import routesApp from "../../contexts/navigation/routesApp";
 import { RootState } from "../../store";
 import { addToCart } from "../../store/actions/cartActions";
-import { loadProducts, setFilterBy } from "../../store/actions/productActions";
 import { AddToCartIcon } from "../../tools/icons";
 import { LoadingSpinner } from "../../tools/ui_components";
 import { StyledProductView } from "./StyledProductView"
 import { CatalogProduct } from "./types";
 
-
 interface PropType {
     match: any,
 }
 
-export const ProductView = ({ match }: PropType) => {
+const ProductView = ({ match }: PropType) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const [product, setProduct] = useState<CatalogProduct | null>(null);
@@ -29,7 +26,7 @@ export const ProductView = ({ match }: PropType) => {
     const loadProduct = async () => {
         const { productId } = match.params;
         const currProduct = products.find((product: CatalogProduct) => (product.id === +productId))
-        if (!currProduct) history.push('/catalog');
+        if (!currProduct) history.push(routesApp.getCatalog());
         else setProduct(currProduct)
     };
 
@@ -52,3 +49,5 @@ export const ProductView = ({ match }: PropType) => {
         <h4>Count: {rating.count}</h4>
     </StyledProductView>
 };
+
+export default ProductView

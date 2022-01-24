@@ -6,8 +6,6 @@ interface PropType {
 }
 export const CartList = ({ items }: PropType) => {
 
-    // if(item)
-
     return <section className="cart-list">
         {items.map((item: ICartItem) => <CartPreview key={item.product.id} item={item} />)}
     </section>

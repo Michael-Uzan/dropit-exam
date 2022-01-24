@@ -1,5 +1,5 @@
 import { TableCell as MaterialTableCell } from "@mui/material";
-import React, { FC } from "react";
+import { FC } from "react";
 
 interface Props {
   width?: number;

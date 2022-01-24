@@ -9,8 +9,6 @@ export function loadProducts() {
       dispatch({ type: 'SET_PRODUCTS', products })
     } catch (err) {
       console.log('canot load products ', err);
-      // eventBusService.showErrorMsg('Cannot load game!')
-      // window.location.assign('/')
     }
   }
 }

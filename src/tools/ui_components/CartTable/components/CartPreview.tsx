@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { ICartItem } from "../../../../interfaces/ICartItem.interface";
 import { removeFromCart } from "../../../../store/actions/cartActions";
 
-
 interface PropType {
     item: ICartItem
 }

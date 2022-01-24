@@ -1,6 +1,11 @@
-import { ProductView } from "../../../modules/product/ProductView";
+import { match } from "react-router-dom";
+import ProductView from "../../../modules/product";
 
-const ProductPage = ({ match }: any) => {
+interface PropType {
+    match: match
+}
+
+const ProductPage = ({ match }: PropType) => {
     return <ProductView match={match} />;
 };
 

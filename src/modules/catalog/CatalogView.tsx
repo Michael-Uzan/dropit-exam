@@ -1,25 +1,21 @@
-import React from "react";
-
 import { LoadingSpinner, Table } from "../../tools/ui_components";
-
 import useCatalog from "./useCatalog";
 import StyledCatalogView from "./StyledCatalogView";
-import { ProductFilter } from "../../tools/ui_components/ProductFilter/ProductFilter";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { loadProducts, setFilterBy } from "../../store/actions/productActions";
 import { IFilterBy } from "../../interfaces/IFilterBy.interface";
+import ProductFilter from "../../tools/ui_components/ProductFilter";
 
 const CatalogView = () => {
   const { products }: any = useSelector((state: RootState) => state.productModule)
   const dispatch = useDispatch()
-  const { isLoading, columns, getKeyRow } = useCatalog();
+  const { columns, getKeyRow } = useCatalog();
 
   const onChangeFilter = (filterBy: IFilterBy) => {
     dispatch(setFilterBy(filterBy));
     dispatch(loadProducts());
   };
-
 
   if (!products) return (<LoadingSpinner isVisible={true} />)
 
@@ -35,7 +31,6 @@ const CatalogView = () => {
         <Table columns={columns} data={products} getKeyRow={getKeyRow} />
       </div>
 
-      {/* <LoadingSpinner isVisible={isLoading} /> */}
     </StyledCatalogView>
   );
 };

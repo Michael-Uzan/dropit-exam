@@ -1,5 +1,4 @@
 import { ICartItem } from "../../interfaces/ICartItem.interface";
-import { CatalogProduct } from "../../modules/product/types";
 
 interface CartState {
     items: ICartItem[]

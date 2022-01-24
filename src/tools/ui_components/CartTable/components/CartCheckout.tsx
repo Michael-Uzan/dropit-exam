@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { useForm } from "../../../hooks/useForm";
 
 interface PropType {
@@ -8,7 +8,6 @@ interface PropType {
 export const CartCheckout = ({ onCheckout }: PropType) => {
 
     const [isDisabeld, setIsDisabeld] = useState(true);
-
 
     const [checkout, handleChange] = useForm({
         username: '',

@@ -4,7 +4,6 @@ import { store } from './store';
 import "./index.css";
 
 import AppRouter from "./contexts/navigation/AppRouter";
-import { AppHeader } from "./tools/ui_components/AppHeader/AppHeader";
 
 const App = () => {
   return (

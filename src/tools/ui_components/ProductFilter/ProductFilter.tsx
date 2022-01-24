@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { LoadingSpinner } from '..';
 import { API } from '../../../contexts/api';
 import { useForm } from '../../hooks/useForm';
-import { CategoriesList } from './CategoriesList';
+import { CategoriesList } from './components/CategoriesList';
 import { StyledProductFilter } from './StyledProductFilter';
 
 interface PropType {
     onChangeFilter: Function
 }
-export const ProductFilter = ({ onChangeFilter }: PropType) => {
+const ProductFilter = ({ onChangeFilter }: PropType) => {
 
     const [categories, setCategories] = useState<string[] | null>(null);
 
@@ -58,3 +58,5 @@ export const ProductFilter = ({ onChangeFilter }: PropType) => {
         </StyledProductFilter>
     )
 };
+
+export default ProductFilter
