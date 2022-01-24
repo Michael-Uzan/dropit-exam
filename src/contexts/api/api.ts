@@ -1,5 +1,12 @@
 import { CatalogProduct } from "../../modules/product/types";
 
+//////////////////////////////////
+//  When Working on Developmet: //
+//////////////////////////////////
+// const link: string = (process.env.NODE_ENV === 'production') ?
+// 	`../db/products.json` :
+// 	`../../../../db/products.json`
+
 const API = {
 	product: {
 		getAll: async (): Promise<CatalogProduct[]> =>
@@ -8,7 +15,8 @@ const API = {
 					'Content-Type': 'application/json',
 					'Accept': 'application/json'
 				}
-			})
+			}
+			)
 				.then(
 					(response) => response.json()
 				),
