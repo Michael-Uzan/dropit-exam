@@ -1,6 +1,12 @@
+import { ratingClasses } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { productService } from "../../services/product.service";
+import { RootState } from "../../store";
+import { addToCart } from "../../store/actions/cartActions";
+import { loadProducts, setFilterBy } from "../../store/actions/productActions";
+import { AddToCartIcon } from "../../tools/icons";
 import { LoadingSpinner } from "../../tools/ui_components";
 import { StyledProductView } from "./StyledProductView"
 import { CatalogProduct } from "./types";
@@ -11,10 +17,10 @@ interface PropType {
 }
 
 export const ProductView = ({ match }: PropType) => {
-
+    const dispatch = useDispatch()
     const history = useHistory()
     const [product, setProduct] = useState<CatalogProduct | null>(null);
-
+    const { products }: any = useSelector((state: RootState) => state.productModule)
 
     useEffect(() => {
         loadProduct();
@@ -22,21 +28,27 @@ export const ProductView = ({ match }: PropType) => {
 
     const loadProduct = async () => {
         const { productId } = match.params;
-        console.log('productId', productId)
-        const currProduct = await productService.getById(productId)
-        if (!product) history.push('./page-not-dound');
-        console.log('product', currProduct)
-        if (currProduct) setProduct(currProduct)
+        const currProduct = products.find((product: CatalogProduct) => (product.id === +productId))
+        if (!currProduct) history.push('/');
+        else setProduct(currProduct)
     };
 
-    const goBack = () => {
-        history.push('/');
-    };
+    const onAddToCart = () => {
+        if (product) dispatch(addToCart(product))
+    }
 
     if (!product) return <LoadingSpinner isVisible={true} />
 
+    const { title, price, category, rating, description, image } = product
+
     return <StyledProductView>
-        <h1>Product</h1>
-        {/* <h3>{product.category}</h3> */}
+        <h1>{title}</h1>
+        <h2>Price: ${price}</h2>
+        <button onClick={onAddToCart}><AddToCartIcon /></button>
+        <h2>Category: {category}</h2>
+        <img src={image} />
+        <p>{description}</p>
+        <h4>Rate: {rating.rate}</h4>
+        <h4>Count: {rating.count}</h4>
     </StyledProductView>
 };

@@ -4,6 +4,11 @@ export interface CatalogProduct {
   image: string;
   price: number;
   category: string;
+  description: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
 
 export interface ProductDetails extends CatalogProduct {

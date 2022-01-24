@@ -15,7 +15,7 @@ export function loadProducts() {
   }
 }
 
-export function setFilterBy(filterBy: IFilterBy) {
+export function setFilterBy(filterBy: IFilterBy | null) {
   return (dispatch: Function) => {
     dispatch({ type: 'SET_FILTER_BY', filterBy })
   }

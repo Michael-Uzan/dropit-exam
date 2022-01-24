@@ -8,7 +8,7 @@ export const productService = {
     getById
 }
 
-async function query(filterBy: IFilterBy) {
+async function query(filterBy: IFilterBy | null) {
     let productsToShow: CatalogProduct[] = await API.product.getAll()
     if (filterBy) {
         let { search, sort, category } = filterBy
@@ -43,9 +43,9 @@ function _sortBy(productsToShow: CatalogProduct[], sort: string) {
     }
 }
 
-async function getById(productId: string) {
+async function getById(productId: string,) {
     console.log('hello')
-    const products: CatalogProduct[] = await _getProducts()
+    const products: CatalogProduct[] = await query(null)
     console.log('hell2222o')
     console.log('products', products)
     // return productsToShow
@@ -55,8 +55,8 @@ async function getById(productId: string) {
 }
 
 async function _getProducts(): Promise<CatalogProduct[]> {
-    const products: CatalogProduct[] = await API.product.getAll()
     console.log('test')
+    const products: CatalogProduct[] = await API.product.getAll()
     return products
 }
 
