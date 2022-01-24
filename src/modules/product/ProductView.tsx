@@ -29,7 +29,7 @@ export const ProductView = ({ match }: PropType) => {
     const loadProduct = async () => {
         const { productId } = match.params;
         const currProduct = products.find((product: CatalogProduct) => (product.id === +productId))
-        if (!currProduct) history.push('/');
+        if (!currProduct) history.push('/catalog');
         else setProduct(currProduct)
     };
 
