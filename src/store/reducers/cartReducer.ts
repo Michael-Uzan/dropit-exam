@@ -22,6 +22,11 @@ export function cartReducer(state: CartState = INITIAL_STATE, action: any) {
                 ...state,
                 items: newitems
             }
+        case 'CLEAR_CART':
+            return {
+                ...state,
+                items: []
+            }
         default:
             return state
     }

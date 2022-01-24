@@ -1,11 +1,16 @@
-import { MouseEvent, useEffect, useState } from "react";
+import { MouseEvent, useEffect, useRef, useState } from "react";
 import { useForm } from "../../../hooks/useForm";
 
-export const CartCheckout = () => {
+interface PropType {
+    onCheckout: Function
+}
+
+export const CartCheckout = ({ onCheckout }: PropType) => {
 
     const [isDisabeld, setIsDisabeld] = useState(true);
 
-    const [checkout, handleChange, setCheckout] = useForm({
+
+    const [checkout, handleChange] = useForm({
         username: '',
         address: ''
     })
@@ -15,19 +20,20 @@ export const CartCheckout = () => {
         else setIsDisabeld(true)
     }, [checkout])
 
-    const onCheckout = (ev: MouseEvent<Element, MouseEvent>) => {
+    const onCartSubmit = (ev: MouseEvent<Element, MouseEvent>) => {
         ev?.preventDefault()
-
+        onCheckout()
     }
 
     const { username, address } = checkout
 
     return <section className="cart-checkout">
-        <form onSubmit={(ev: any) => onCheckout(ev)} >
+        <h2>Checkout</h2>
+        <form onSubmit={(ev: any) => onCartSubmit(ev)} >
             <div>
                 <label htmlFor="username">Name: </label>
                 <input type="text" name="username" id="username" value={username}
-                    onChange={handleChange} placeholder="Name" />
+                    onChange={handleChange} placeholder="Name" autoFocus />
             </div>
             <div>
                 <label htmlFor="address">Address: </label>

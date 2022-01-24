@@ -24,9 +24,11 @@ export const CartTotal = ({ items }: PropType) => {
     }
 
     return <section className="cart-total">
-        <h2>Cart Summary</h2>
-        <h4>Items: {getItemsCount()} </h4>
-        <h4>Products: {getProductsCount()} </h4>
-        <h4>Total Price: ${getCartTotal()} </h4>
+        <h2>Cart Summary: </h2>
+        <div className="totals">
+            <h4>Items: {getItemsCount()} </h4>
+            <h4>Products: {getProductsCount()} </h4>
+            <h4>Total Price: ${getCartTotal()} </h4>
+        </div>
     </section>
 };

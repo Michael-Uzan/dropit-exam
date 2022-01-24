@@ -5,3 +5,9 @@ export function addToCart(product: CatalogProduct) {
         dispatch({ type: 'ADD_TO_CART', product })
     }
 }
+
+export function clearCart() {
+    return (dispatch: Function) => {
+        dispatch({ type: 'CLEAR_CART' })
+    }
+}
